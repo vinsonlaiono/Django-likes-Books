@@ -1,0 +1,29 @@
+book1 = Book.objects.create(name="Harry Potter", desc="the first book", uploader_id=1)
+book2 = Book.objects.create(name="Harry Potter", desc="the first book", uploader_id=1)
+
+book3 = Book.objects.create(name="Black Mouth", desc="something cool", uploader_id=2)
+book4 = Book.objects.create(name="Jungle Book", desc="boy mogily", uploader_id=2)
+
+book5 = Book.objects.create(name="Thraser", desc="dwight said this", uploader_id=3)
+book6 = Book.objects.create(name="Smasher", desc="dwight also said this", uploader_id=3)
+
+book1 = Book.objects.get(id=1)
+book2 = Book.objects.get(id=2)
+book3 = Book.objects.get(id=3)
+book4 = Book.objects.get(id=4)
+book5 = Book.objects.get(id=5)
+book6 = Book.objects.get(id=6)
+
+user1 = User.objects.get(id=1)
+user2 = User.objects.get(id=2)
+user3 = User.objects.get(id=3)
+user1.liked_books.add(book6)
+user2.liked_books.add(book1, book3)
+allbooks = Book.objects.all()
+user3.liked_books.add(allbooks)
+user3.liked_books.add(book1, book2, book3, book4, book5, book6)
+
+book1.liked_users.all()
+book1.uploader
+book2.liked_users.all()
+book2.uploader
